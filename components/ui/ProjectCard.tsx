@@ -7,7 +7,7 @@ interface ProjectCardProps {
   subtitle: string;
   tech: string[];
   description: string;
-  highlights: string[];
+  impact: string;
   index: number;
 }
 
@@ -16,7 +16,7 @@ export default function ProjectCard({
   subtitle,
   tech,
   description,
-  highlights,
+  impact,
   index,
 }: ProjectCardProps) {
   return (
@@ -28,29 +28,21 @@ export default function ProjectCard({
       whileHover={{ y: -4 }}
       className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md md:p-7"
     >
-      <div className="mb-4">
-        <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-        <p className="mt-1 text-sm font-medium text-accent">{subtitle}</p>
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+          <p className="mt-1 text-sm font-medium text-accent">{subtitle}</p>
+        </div>
+        <span className="shrink-0 rounded-full bg-accent-muted px-2.5 py-1 text-xs font-semibold text-accent">
+          {impact}
+        </span>
       </div>
-      <p className="mb-4 text-sm leading-relaxed text-muted md:text-base">
-        {description}
-      </p>
-      <ul className="mb-5 space-y-2">
-        {highlights.map((highlight) => (
-          <li
-            key={highlight}
-            className="flex gap-2 text-sm leading-relaxed text-muted"
-          >
-            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-            <span>{highlight}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-auto flex flex-wrap gap-2">
+      <p className="mb-5 flex-1 text-sm leading-relaxed text-muted">{description}</p>
+      <div className="flex flex-wrap gap-2">
         {tech.map((item) => (
           <span
             key={item}
-            className="rounded-full bg-section-alt px-3 py-1 text-xs font-medium text-foreground"
+            className="rounded-full bg-section-alt px-2.5 py-1 text-xs font-medium text-foreground"
           >
             {item}
           </span>

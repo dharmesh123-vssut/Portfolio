@@ -2,98 +2,64 @@
 
 import { motion } from "framer-motion";
 import { Link2, Mail, MapPin, Phone } from "lucide-react";
-import SectionHeader from "@/components/ui/SectionHeader";
 import { personalInfo } from "@/lib/resume-data";
-
-const contactItems = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: personalInfo.email,
-    href: `mailto:${personalInfo.email}`,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: personalInfo.phone,
-    href: `tel:${personalInfo.phone.replace(/\s/g, "")}`,
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: personalInfo.location,
-  },
-  {
-    icon: Link2,
-    label: "LinkedIn",
-    value: "linkedin.com/in/its-dharmesh",
-    href: personalInfo.linkedin,
-    external: true,
-  },
-];
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="px-4 py-20 md:px-6 md:py-24"
-      aria-label="Contact"
-    >
+    <section id="contact" className="px-4 py-20 md:px-6 md:py-24" aria-label="Contact">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader
-          title="Get In Touch"
-          subtitle="Open to Salesforce development opportunities, collaborations, and interesting projects."
-        />
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-10"
+          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-accent-hover p-8 text-center shadow-lg md:p-14"
         >
-          <div className="grid gap-4 sm:grid-cols-2">
-            {contactItems.map((item) => {
-              const Icon = item.icon;
-              const content = (
-                <div className="flex items-start gap-4 rounded-xl border border-border bg-background p-4 transition-colors hover:border-accent">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-accent">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-muted">{item.label}</p>
-                    <p className="mt-1 text-sm font-semibold text-foreground md:text-base">
-                      {item.value}
-                    </p>
-                  </div>
-                </div>
-              );
+          <h2 className="text-3xl font-bold text-white md:text-4xl">
+            Let&apos;s build something together
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-white/90">
+            Open to Salesforce development roles, collaborations, and interesting projects.
+          </p>
 
-              if (item.href) {
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.external ? "_blank" : undefined}
-                    rel={item.external ? "noopener noreferrer" : undefined}
-                    className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-xl"
-                  >
-                    {content}
-                  </a>
-                );
-              }
-
-              return <div key={item.label}>{content}</div>;
-            })}
-          </div>
-
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={`mailto:${personalInfo.email}?subject=Hello%20${encodeURIComponent(personalInfo.name)}`}
-              className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-card px-8 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent-muted"
             >
-              Send an Email
+              <Mail className="h-4 w-4" />
+              Send Email
             </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+            >
+              <Link2 className="h-4 w-4" />
+              LinkedIn
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/90">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Mail className="h-4 w-4 shrink-0" />
+              {personalInfo.email}
+            </a>
+            <a
+              href={`tel:${personalInfo.phone.replace(/\s/g, "")}`}
+              className="inline-flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <Phone className="h-4 w-4 shrink-0" />
+              {personalInfo.phone}
+            </a>
+            <span className="inline-flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0" />
+              {personalInfo.location}
+            </span>
           </div>
         </motion.div>
       </div>

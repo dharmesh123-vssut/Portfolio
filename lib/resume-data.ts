@@ -3,11 +3,15 @@ export const personalInfo = {
   title: "Salesforce Developer",
   tagline:
     "Building enterprise-scale Lightning applications with LDV optimization and AI-driven development.",
+  shortBio:
+    "I design and ship Salesforce solutions that handle real enterprise scale — from 100K+ record dashboards to full EHS compliance platforms. 3x certified, Trailhead Ranger, and passionate about performance, clean architecture, and great UX.",
   email: "sahoodharmeshkumar2205@gmail.com",
   phone: "+91-9178315649",
   location: "Patia, Bhubaneswar, India",
   linkedin: "https://linkedin.com/in/its-dharmesh",
   resumePath: "/resume.pdf",
+  profileImage: "/profile.png",
+  availability: "Open to opportunities",
   summary:
     "Salesforce Developer with 2+ years specializing in Large Data Volume (LDV) optimization and enterprise-scale Lightning applications. Architected 200+ LWC components and Apex classes, achieving 50% performance improvements for 100K+ record datasets. 3x Salesforce Certified (Platform Developer I, AI Specialist, AI Associate) | Trailhead Ranger with 144 badges. Expertise in fleet safety, EHS compliance, and energy domains.",
 };
@@ -20,48 +24,88 @@ export const stats = [
   { label: "Trailhead Badges", value: "144" },
 ];
 
+export const whatIDo = [
+  {
+    title: "Build",
+    description: "Enterprise LWC & Apex solutions for fleet safety, EHS, and compliance platforms.",
+  },
+  {
+    title: "Optimize",
+    description: "LDV patterns, SOQL tuning, and metadata-driven architecture for scale.",
+  },
+  {
+    title: "Integrate",
+    description: "REST APIs, Experience Cloud portals, and external service connections.",
+  },
+];
+
 export const navLinks = [
+  { label: "Home", href: "#hero" },
+  { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Education", href: "#education" },
+  { label: "Credentials", href: "#credentials" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const experiences = [
   {
     company: "Rhythm Innovations",
+    initials: "RI",
     role: "Software Engineer - Salesforce Developer",
     location: "Patia, Bhubaneswar",
     period: "Jun 2024 – Present",
-    highlights: [
-      "Architected 70+ Lightning Web Components (LWC) and 60+ Apex classes for enterprise fleet safety and EHS compliance platforms.",
-      "Delivered 200+ LWC Components and Apex classes overall, serving insurance and compliance use cases for Hero Future Energies (HFE).",
-      "Led end-to-end implementation of the Hero Future Energies (HFE) module single-handedly within 4-month timeline, delivering Incident Management, Hazard Reporting, Training Management, Mock Drills, Attendance Tracking, and Root Cause Analysis (5-Whys), reducing manual tracking by 60%.",
-      "Constructed SPS Command Center, a Large Data Volume (LDV) optimized fleet compliance dashboard with cursor-based pagination handling 100K+ driver/location/vehicle records, achieving 50% faster query performance.",
-      "Designed metadata-driven LWC Dashboard Components using Custom Metadata Types, configurable based on user personas.",
-      "Integrated external APIs using Named Credentials and REST API callouts: AWS S3, Samba Safety for MVR ordering, and WhatsApp for notifications.",
-      "Engineered multi-portal architecture using Experience Cloud (3 portals) with role-based access using Custom Permission Sets.",
-      "Automated 70+ Salesforce Flows for HFE and Safer-Fleet, streamlining fleet compliance workflows.",
-      "Implemented Voice Navigation and End-to-End Chat-Bot, reducing navigation clicks by 30%.",
-      "Leveraged Cursor AI for accelerated development, code reviews, and automated refactoring, improving development velocity by 40%.",
+    summary:
+      "Leading Salesforce development for fleet safety and EHS compliance platforms at enterprise scale.",
+    featured: [
+      "Built SPS Command Center — LDV-optimized dashboard handling 100K+ records with 50% faster query performance.",
+      "Led end-to-end HFE EHS module delivery in 4 months, reducing manual tracking by 60%.",
+      "Architected 70+ LWCs and 60+ Apex classes with metadata-driven, persona-based dashboards.",
+    ],
+    details: [
+      "Delivered 200+ LWC Components and Apex classes for Hero Future Energies insurance and compliance use cases.",
+      "Integrated AWS S3, Samba Safety MVR ordering, and WhatsApp notifications via Named Credentials.",
+      "Engineered 3-portal Experience Cloud architecture with Custom Permission Sets and configurable menus.",
+      "Automated 70+ Salesforce Flows for fleet compliance workflows.",
+      "Implemented Voice Navigation and Chat-Bot, reducing navigation clicks by 30%.",
+      "Leveraged Cursor AI for development velocity improvements of 40%.",
     ],
   },
   {
     company: "OpenText",
+    initials: "OT",
     role: "Salesforce Developer Intern",
     location: "Bangalore, India",
     period: "Sep 2023 – Mar 2024",
-    highlights: [
-      "Contributed to enterprise platform development over 6 months, collaborating with a team of 5 developers on Apex, LWC, and Salesforce configuration.",
-      "Crafted 15+ custom Lightning Web Components for internal tools, improving team efficiency by 30% and automating manual processes.",
-      "Created and maintained Apex triggers, classes, and batch jobs for business logic automation, supporting 10+ internal stakeholders.",
-      "Generated Reports and Dashboards providing actionable insights, reducing manual reporting time by 25%.",
-      "Streamlined Salesforce development lifecycle processes including sandbox management, change sets, and deployment workflows.",
+    summary:
+      "Contributed to enterprise platform development alongside a team of 5 Salesforce developers.",
+    featured: [
+      "Crafted 15+ custom LWCs for internal tools, improving team efficiency by 30%.",
+      "Built Apex triggers, batch jobs, and automation supporting 10+ stakeholders.",
+      "Reduced manual reporting time by 25% with Reports and Dashboards.",
+    ],
+    details: [
+      "Collaborated on Apex, LWC, and Salesforce configuration for enterprise platform development.",
+      "Streamlined sandbox management, change sets, and deployment workflows.",
     ],
   },
+];
+
+export const topSkills = [
+  "Apex",
+  "LWC",
+  "SOQL",
+  "Salesforce Flows",
+  "Experience Cloud",
+  "Custom Metadata",
+  "LDV Patterns",
+  "REST APIs",
+  "Batch Apex",
+  "Named Credentials",
+  "Platform Events",
+  "JavaScript ES6+",
+  "Salesforce DX",
+  "CRM Analytics",
+  "AI Specialist",
 ];
 
 export const skillGroups = [
@@ -162,67 +206,52 @@ export const projects = [
     subtitle: "Fleet Compliance Dashboard",
     tech: ["LWC", "Apex", "Custom Metadata", "LDV Patterns", "SOQL"],
     description:
-      "Engineered enterprise fleet compliance command center with sub-second response times for 100K+ records using LDV-optimized cursor-based pagination.",
-    highlights: [
-      "Implemented real-time readiness scoring and exception tracking across MVR, License, Medical, and Telematics domains.",
-    ],
+      "Enterprise fleet compliance command center with sub-second response times for 100K+ records using LDV-optimized cursor-based pagination.",
+    impact: "50% faster queries",
+    featured: true,
   },
   {
     title: "Hero Future Energies (HFE)",
     subtitle: "EHS Module",
     tech: ["LWC", "Apex", "Salesforce Flows", "Custom Objects", "Triggers"],
     description:
-      "Delivered complete EHS solution single-handedly within 4 months, reducing manual tracking by 60%.",
-    highlights: [
-      "Implemented Incident Management, Hazard Reporting, Training Management, and Mock Drills with 24+ configurable questions.",
-      "Designed 5-Whys Root Cause Analysis module using Custom Metadata for flexible configuration.",
-    ],
+      "Complete EHS solution delivered single-handedly in 4 months — incident management, hazard reporting, training, and root cause analysis.",
+    impact: "60% less manual work",
+    featured: false,
   },
   {
     title: "Multi-Portal Architecture",
     subtitle: "Experience Cloud",
-    tech: ["LWC", "Experience Cloud", "Custom Permissions", "Apex", "Sharing Rules"],
+    tech: ["LWC", "Experience Cloud", "Custom Permissions", "Apex"],
     description:
-      "Architected 3 portal types (Platform, Community, Mobile) using Experience Cloud with configurable menu system.",
-    highlights: [
-      "Built admin console for picklist management, feature toggles, and user access with custom permission framework.",
-    ],
+      "Three portal types (Platform, Community, Mobile) with configurable menus and role-based access control.",
+    impact: "3 portals live",
+    featured: false,
   },
   {
     title: "External Integrations Hub",
     subtitle: "Enterprise Integration Layer",
     tech: ["Named Credentials", "Apex Queueable", "REST APIs", "Bulk API"],
     description:
-      "Designed centralized integration layer connecting 4 external services using Named Credentials and Apex Queueable.",
-    highlights: [
-      "Implemented retry logic, error handling, and audit logging for enterprise-grade reliability.",
-    ],
+      "Centralized integration layer connecting 4 external services with retry logic, error handling, and audit logging.",
+    impact: "4 services connected",
+    featured: false,
   },
   {
     title: "Salesforce Hybrid UI",
     subtitle: "Mobile Application",
     tech: ["LWC OSS", "IndexedDB", "Bulk API"],
     description:
-      "Developed mobile-friendly app for incident/hazard reporting outside Salesforce environment.",
-    highlights: [
-      "Implemented offline mode using LWC-OSS and IndexedDB with Bulk API sync for seamless data synchronization.",
-    ],
+      "Mobile-friendly incident and hazard reporting app with offline mode and Bulk API sync.",
+    impact: "Offline-first mobile",
+    featured: false,
   },
 ];
 
 export const certifications = [
-  {
-    name: "Salesforce Platform Developer I",
-    date: "Nov 2025",
-  },
-  {
-    name: "Salesforce AI Specialist",
-    date: "Nov 2024",
-  },
-  {
-    name: "Salesforce AI Associate",
-    date: "Oct 2024",
-  },
+  { name: "Salesforce Platform Developer I", date: "Nov 2025" },
+  { name: "Salesforce AI Specialist", date: "Nov 2024" },
+  { name: "Salesforce AI Associate", date: "Oct 2024" },
 ];
 
 export const trailhead = {
@@ -234,13 +263,13 @@ export const trailhead = {
 export const education = [
   {
     degree: "B.Tech, Information Technology",
-    institution: "Veer Surendra Sai University of Technology, Burla, Sambalpur",
+    institution: "Veer Surendra Sai University of Technology, Burla",
     period: "2019 – 2023",
     score: "8.57 CGPA",
   },
   {
     degree: "Intermediate, Science",
-    institution: "Jawahar Navodaya Vidyalaya, Hadagarh, Keonjhar",
+    institution: "Jawahar Navodaya Vidyalaya, Hadagarh",
     period: "2017 – 2019",
     score: "95%",
   },

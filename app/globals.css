@@ -1,15 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fafafa;
-  --foreground: #1e293b;
-  --muted: #64748b;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --card: #ffffff;
-  --border: #e2e8f0;
-  --section-alt: #f1f5f9;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -17,10 +8,43 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
   --color-card: var(--card);
   --color-border: var(--border);
   --color-section-alt: var(--section-alt);
   --font-sans: var(--font-inter);
+}
+
+@layer theme {
+  :root {
+    --background: #fafafa;
+    --foreground: #1e293b;
+    --muted: #64748b;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-muted: #eff6ff;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --section-alt: #f1f5f9;
+    --hero-glow-1: rgba(37, 99, 235, 0.12);
+    --hero-glow-2: rgba(148, 163, 184, 0.2);
+    color-scheme: light;
+
+    @variant dark {
+      --background: #1e293b;
+      --foreground: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #3b82f6;
+      --accent-hover: #60a5fa;
+      --accent-muted: rgba(30, 64, 175, 0.35);
+      --card: #334155;
+      --border: #475569;
+      --section-alt: #273449;
+      --hero-glow-1: rgba(59, 130, 246, 0.18);
+      --hero-glow-2: rgba(71, 85, 105, 0.45);
+      color-scheme: dark;
+    }
+  }
 }
 
 html {
@@ -31,11 +55,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
   background: #dbeafe;
   color: #1e3a8a;
+}
+
+.dark ::selection {
+  background: #1e40af;
+  color: #eff6ff;
 }
 
 section {

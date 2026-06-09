@@ -2,47 +2,55 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { personalInfo, stats } from "@/lib/resume-data";
+import { personalInfo, stats, whatIDo } from "@/lib/resume-data";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="px-4 py-20 md:px-6 md:py-24"
-      aria-label="About"
-    >
+    <section id="about" className="px-4 py-20 md:px-6 md:py-24" aria-label="About">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          title="About Me"
-          subtitle="Passionate about building scalable Salesforce solutions that drive real business impact."
+          eyebrow="About"
+          title="Who I Am"
+          subtitle="Salesforce developer passionate about building solutions that scale."
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-10"
+          className="max-w-3xl text-base leading-relaxed text-muted md:text-lg"
         >
-          <p className="text-base leading-relaxed text-muted md:text-lg">
-            {personalInfo.summary}
-          </p>
+          {personalInfo.shortBio}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-8 flex flex-wrap gap-6 rounded-2xl border border-border bg-card p-6 md:gap-10 md:p-8"
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="min-w-[100px]">
+              <p className="text-2xl font-bold text-accent md:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-xs text-muted md:text-sm">{stat.label}</p>
+            </div>
+          ))}
         </motion.div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {stats.map((stat, index) => (
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {whatIDo.map((item, index) => (
             <motion.div
-              key={stat.label}
+              key={item.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-2xl border border-border bg-card p-4 text-center shadow-sm md:p-5"
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
             >
-              <p className="text-2xl font-bold text-accent md:text-3xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs text-muted md:text-sm">{stat.label}</p>
+              <h3 className="text-lg font-semibold text-accent">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
             </motion.div>
           ))}
         </div>

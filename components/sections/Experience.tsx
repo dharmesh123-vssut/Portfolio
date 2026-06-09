@@ -11,16 +11,18 @@ export default function Experience() {
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          title="Work Experience"
-          subtitle="Building enterprise Salesforce solutions across fleet safety, EHS compliance, and energy domains."
+          eyebrow="Career"
+          title="Experience"
+          subtitle="A track record of delivering enterprise Salesforce solutions."
         />
 
-        <div className="space-y-6">
+        <div>
           {experiences.map((experience, index) => (
             <TimelineCard
               key={`${experience.company}-${experience.period}`}
               {...experience}
               index={index}
+              isLast={index === experiences.length - 1}
             />
           ))}
         </div>
