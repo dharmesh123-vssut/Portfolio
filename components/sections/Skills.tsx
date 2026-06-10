@@ -12,7 +12,7 @@ export default function Skills() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="skills" className="px-4 py-20 md:px-6 md:py-24" aria-label="Skills">
+    <section id="skills" className="px-4 py-12 md:px-6 md:py-14" aria-label="Skills">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
           eyebrow="Expertise"
@@ -30,14 +30,14 @@ export default function Skills() {
           {topSkills.map((skill) => (
             <span
               key={skill}
-              className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+              className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent sm:px-4 sm:py-2 sm:text-sm"
             >
               {skill}
             </span>
           ))}
         </motion.div>
 
-        <div className="mt-8">
+        <div className="mt-5">
           <button
             type="button"
             onClick={() => setExpanded((prev) => !prev)}
@@ -50,7 +50,7 @@ export default function Skills() {
           </button>
 
           {expanded ? (
-            <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
               {skillGroups.map((group, index) => (
                 <SkillGroup
                   key={group.category}

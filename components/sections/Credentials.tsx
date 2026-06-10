@@ -9,7 +9,7 @@ export default function Credentials() {
   return (
     <section
       id="credentials"
-      className="bg-section-alt px-4 py-20 md:px-6 md:py-24"
+      className="bg-section-alt px-4 py-12 md:px-6 md:py-14"
       aria-label="Credentials and education"
     >
       <div className="mx-auto max-w-6xl">
@@ -33,8 +33,8 @@ export default function Credentials() {
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-muted text-accent">
                   <BadgeCheck className="h-4 w-4" />
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground">{cert.name}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-sm font-semibold leading-snug text-foreground">{cert.name}</h3>
                   <p className="text-xs text-muted">{cert.date}</p>
                 </div>
               </motion.div>
@@ -68,7 +68,7 @@ export default function Credentials() {
           </motion.div>
         </div>
 
-        <div className="mt-8 space-y-3">
+        <div className="mt-5 space-y-3">
           {education.map((item, index) => (
             <motion.div
               key={item.degree}
@@ -81,9 +81,9 @@ export default function Credentials() {
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-muted text-accent">
                 <GraduationCap className="h-4 w-4" />
               </div>
-              <div className="flex-1">
+              <div className="min-w-0 flex-1">
                 <h3 className="text-sm font-semibold text-foreground">{item.degree}</h3>
-                <p className="text-xs text-muted">
+                <p className="mt-0.5 text-xs leading-relaxed text-muted">
                   {item.institution} · {item.period} · {item.score}
                 </p>
               </div>

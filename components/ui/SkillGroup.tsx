@@ -15,9 +15,9 @@ export default function SkillGroup({ category, skills, index }: SkillGroupProps)
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="rounded-2xl border border-border bg-card p-5 shadow-sm md:p-6"
+      className="rounded-2xl border border-border bg-card p-4 shadow-sm md:p-5"
     >
-      <h3 className="mb-4 text-lg font-semibold text-foreground">{category}</h3>
+      <h3 className="mb-3 text-base font-semibold text-foreground">{category}</h3>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span

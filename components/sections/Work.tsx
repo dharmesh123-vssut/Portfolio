@@ -10,7 +10,7 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="bg-section-alt px-4 py-20 md:px-6 md:py-24"
+      className="bg-section-alt px-4 py-12 md:px-6 md:py-14"
       aria-label="Selected work"
     >
       <div className="mx-auto max-w-6xl">
@@ -21,12 +21,12 @@ export default function Work() {
         />
 
         {featured ? (
-          <div className="mb-8">
+          <div className="mb-5">
             <FeaturedProjectCard {...featured} />
           </div>
         ) : null}
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {rest.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}

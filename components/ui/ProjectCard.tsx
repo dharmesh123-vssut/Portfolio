@@ -26,7 +26,7 @@ export default function ProjectCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -4 }}
-      className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md md:p-7"
+      className="flex h-full min-w-0 flex-col rounded-2xl border border-border bg-card p-4 shadow-sm transition-shadow hover:shadow-md md:p-5"
     >
       <div className="mb-3 flex items-start justify-between gap-3">
         <div>
@@ -37,7 +37,7 @@ export default function ProjectCard({
           {impact}
         </span>
       </div>
-      <p className="mb-5 flex-1 text-sm leading-relaxed text-muted">{description}</p>
+      <p className="mb-3 flex-1 text-sm leading-relaxed text-muted">{description}</p>
       <div className="flex flex-wrap gap-2">
         {tech.map((item) => (
           <span

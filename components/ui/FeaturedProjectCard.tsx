@@ -23,7 +23,7 @@ export default function FeaturedProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5 }}
-      className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-sm md:p-10"
+      className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm md:p-6"
     >
       <div
         className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl"
@@ -33,10 +33,10 @@ export default function FeaturedProjectCard({
         <span className="inline-flex rounded-full bg-accent-muted px-3 py-1 text-xs font-semibold text-accent">
           Featured Project
         </span>
-        <h3 className="mt-4 text-2xl font-bold text-foreground md:text-3xl">{title}</h3>
+        <h3 className="text-lg font-bold text-foreground sm:text-xl md:text-2xl">{title}</h3>
         <p className="mt-1 text-sm font-medium text-accent">{subtitle}</p>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">{description}</p>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted md:text-base">{description}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
             {impact}
           </span>

@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-section-alt px-4 py-20 md:px-6 md:py-24"
+      className="bg-section-alt px-4 py-12 md:px-6 md:py-14"
       aria-label="Work experience"
     >
       <div className="mx-auto max-w-6xl">

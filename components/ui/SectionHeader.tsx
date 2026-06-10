@@ -25,7 +25,7 @@ export default function SectionHeader({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "mb-10 md:mb-12",
+        "mb-6 md:mb-8",
         align === "center" ? "text-center" : "text-left",
         className,
       )}
@@ -35,13 +35,13 @@ export default function SectionHeader({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+      <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
         {title}
       </h2>
       {subtitle ? (
         <p
           className={cn(
-            "mt-3 max-w-2xl text-base text-muted md:text-lg",
+            "mt-2 max-w-2xl text-sm text-muted md:text-base",
             align === "center" && "mx-auto",
           )}
         >

@@ -38,10 +38,10 @@ export default function TimelineCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative flex gap-5 md:gap-6"
+      className="relative flex min-w-0 gap-3 sm:gap-4 md:gap-5"
     >
       <div className="flex flex-col items-center">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-muted text-sm font-bold text-accent">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-muted text-xs font-bold text-accent">
           {initials}
         </div>
         {!isLast ? (
@@ -49,22 +49,22 @@ export default function TimelineCard({
         ) : null}
       </div>
 
-      <div className="flex-1 pb-10">
-        <div className="rounded-2xl border border-border bg-card p-5 shadow-sm md:p-6">
+      <div className="min-w-0 flex-1 pb-6">
+        <div className="rounded-2xl border border-border bg-card p-4 shadow-sm md:p-5">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <h3 className="text-lg font-semibold text-foreground">{role}</h3>
-              <p className="text-accent">{company}</p>
-              <p className="text-sm text-muted">{location}</p>
+            <div className="min-w-0">
+              <h3 className="text-base font-semibold text-foreground sm:text-lg">{role}</h3>
+              <p className="text-sm text-accent sm:text-base">{company}</p>
+              <p className="text-xs text-muted sm:text-sm">{location}</p>
             </div>
-            <span className="inline-flex w-fit shrink-0 rounded-full bg-accent-muted px-3 py-1 text-xs font-medium text-accent">
+            <span className="inline-flex w-fit shrink-0 self-start rounded-full bg-accent-muted px-3 py-1 text-xs font-medium text-accent">
               {period}
             </span>
           </div>
 
           <p className="mt-3 text-sm text-muted">{summary}</p>
 
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-3 space-y-1.5">
             {featured.map((item) => (
               <li key={item} className="flex gap-2 text-sm leading-relaxed text-muted">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />

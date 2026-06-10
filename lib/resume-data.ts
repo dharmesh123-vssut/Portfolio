@@ -39,11 +39,23 @@ export const whatIDo = [
 ];
 
 export const navLinks = [
-  { label: "Home", href: "#hero" },
+  { label: "About Me", href: "#about" },
+  { label: "Work Exp", href: "#experience" },
   { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Credentials", href: "#credentials" },
+  { label: "Expertise", href: "#skills" },
+  { label: "Achievements", href: "#credentials" },
   { label: "Contact", href: "#contact" },
+];
+
+/** Page section IDs in scroll order — used for scroll-spy highlighting */
+export const sectionIds = [
+  "hero",
+  "work",
+  "about",
+  "experience",
+  "skills",
+  "credentials",
+  "contact",
 ];
 
 export const experiences = [
