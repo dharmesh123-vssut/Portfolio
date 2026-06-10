@@ -10,7 +10,6 @@ export const personalInfo = {
   location: "Patia, Bhubaneswar, India",
   linkedin: "https://linkedin.com/in/its-dharmesh",
   resumePath: "/resume.pdf",
-  profileImage: "/profile.png",
   availability: "Open to opportunities",
   summary:
     "Salesforce Developer with 2+ years specializing in Large Data Volume (LDV) optimization and enterprise-scale Lightning applications. Architected 200+ LWC components and Apex classes, achieving 50% performance improvements for 100K+ record datasets. 3x Salesforce Certified (Platform Developer I, AI Specialist, AI Associate) | Trailhead Ranger with 144 badges. Expertise in fleet safety, EHS compliance, and energy domains.",
